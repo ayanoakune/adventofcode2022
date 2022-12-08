@@ -8,11 +8,13 @@ hljs.registerLanguage("typescript", typescript);
 
 import { day1part1 } from "./aoc/day1-part1";
 import { day1part2 } from "./aoc/day1-part2";
+import { day2part1 } from "./aoc/day2-part1";
+import { day2part2 } from "./aoc/day2-part2";
 
 import day1part1code from "./aoc/day1-part1?raw";
 import day1part2code from "./aoc/day1-part2?raw";
-
-console.log(day1part1());
+import day2part1code from "./aoc/day2-part1?raw";
+import day2part2code from "./aoc/day2-part2?raw";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div style="text-align: center;">
@@ -38,6 +40,16 @@ ${hljs.highlight(day1part1code, { language: "typescript" }).value}
 ${hljs.highlight(day1part2code, { language: "typescript" }).value}
 </code></pre>
   <p>Result: ${day1part2()}</p>
+  <h3> Day 2 </h3>
+  <p>Part 1</p>
+<pre><code class="hljs">
+${hljs.highlight(day2part1code, { language: "typescript" }).value}
+</code></pre>
+  <p>Result: ${day2part1()}</p>
+  <br />
+  <p>Part 2</p>
+<pre><code class="hljs">
+${hljs.highlight(day2part2code, { language: "typescript" }).value}
+</code></pre>
+  <p>Result: ${day2part2()}</p>
 `;
-
-// console.log(day1part1());
