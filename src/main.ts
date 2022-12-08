@@ -15,6 +15,8 @@ import { day4part1 } from "./aoc/day4-part1";
 import { day4part2 } from "./aoc/day4-part2";
 import { day5part1 } from "./aoc/day5-part1";
 import { day5part2 } from "./aoc/day5-part2";
+import { day6part1 } from "./aoc/day6-part1";
+import { day6part2 } from "./aoc/day6-part2";
 
 import day1part1code from "./aoc/day1-part1?raw";
 import day1part2code from "./aoc/day1-part2?raw";
@@ -26,6 +28,8 @@ import day4part1code from "./aoc/day4-part1?raw";
 import day4part2code from "./aoc/day4-part2?raw";
 import day5part1code from "./aoc/day5-part1?raw";
 import day5part2code from "./aoc/day5-part2?raw";
+import day6part1code from "./aoc/day6-part1?raw";
+import day6part2code from "./aoc/day6-part2?raw";
 
 const aoc = [
   [
@@ -47,6 +51,10 @@ const aoc = [
   [
     [day5part1, day5part2],
     [day5part1code, day5part2code],
+  ],
+  [
+    [day6part1, day6part2],
+    [day6part1code, day6part2code],
   ],
 ];
 
