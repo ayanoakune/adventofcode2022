@@ -1,5 +1,4 @@
 import "./style.css";
-import typescriptLogo from "./typescript.svg";
 
 import hljs from "highlight.js/lib/core";
 import typescript from "highlight.js/lib/languages/typescript";
@@ -20,52 +19,46 @@ import day2part2code from "./aoc/day2-part2?raw";
 import day3part1code from "./aoc/day3-part1?raw";
 import day3part2code from "./aoc/day3-part2?raw";
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div style="text-align: center;">
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Advent Of Code 2022</h1>
-    <h2><i>powered by</i> Vite + TypeScript</h2>
-  </div>
-  <br />
-  <h3> Day 1 </h3>
-  <p>Part 1</p>
+const aoc = [
+  [
+    [day1part1, day1part2],
+    [day1part1code, day1part2code],
+  ],
+  [
+    [day2part1, day2part2],
+    [day2part1code, day2part2code],
+  ],
+  [
+    [day3part1, day3part2],
+    [day3part1code, day3part2code],
+  ],
+];
+
+function aocCode(): string {
+  let html = ``;
+  for (let i = 0; i < aoc.length; i++) {
+    const part1 = aoc[i][0][0] as () => any;
+    const part1code = aoc[i][1][0] as string;
+    const part2 = aoc[i][0][1] as () => any;
+    const part2code = aoc[i][1][1] as string;
+
+    html += `
+<h3>Day ${i + 1}</h3>
+<p>Part 1</p>
 <pre><code class="hljs">
-${hljs.highlight(day1part1code, { language: "typescript" }).value}
+${hljs.highlight(part1code, { language: "typescript" }).value}
 </code></pre>
-  <p>Result: ${day1part1()}</p>
-  <br />
-  <p>Part 2</p>
+<p>Result: ${part1()}</p>
+<br />
+<p>Part 2</p>
 <pre><code class="hljs">
-${hljs.highlight(day1part2code, { language: "typescript" }).value}
+${hljs.highlight(part2code, { language: "typescript" }).value}
 </code></pre>
-  <p>Result: ${day1part2()}</p>
-  <h3> Day 2 </h3>
-  <p>Part 1</p>
-<pre><code class="hljs">
-${hljs.highlight(day2part1code, { language: "typescript" }).value}
-</code></pre>
-  <p>Result: ${day2part1()}</p>
-  <br />
-  <p>Part 2</p>
-<pre><code class="hljs">
-${hljs.highlight(day2part2code, { language: "typescript" }).value}
-</code></pre>
-  <p>Result: ${day2part2()}</p>
-  <h3> Day 3 </h3>
-  <p>Part 1</p>
-<pre><code class="hljs">
-${hljs.highlight(day3part1code, { language: "typescript" }).value}
-</code></pre>
-  <p>Result: ${day3part1()}</p>
-  <br />
-  <p>Part 2</p>
-<pre><code class="hljs">
-${hljs.highlight(day3part2code, { language: "typescript" }).value}
-</code></pre>
-  <p>Result: ${day3part2()}</p>
-`;
+<p>Result: ${part2()}</p>
+    `;
+  }
+
+  return html;
+}
+
+document.querySelector<HTMLDivElement>("#aoc")!.innerHTML = aocCode();
