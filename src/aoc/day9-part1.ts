@@ -1,14 +1,5 @@
 import { input } from "./day9-input";
 
-// const input = `R 4
-// U 4
-// L 3
-// D 1
-// R 4
-// D 1
-// L 5
-// R 2`;
-
 type Coord = { x: number; y: number };
 
 function createGrid(x: number, y: number) {
@@ -95,7 +86,6 @@ function countTailLocations(grid: string[][]): number {
 }
 
 export function day9part1() {
-  return 0;
   const size = 1000;
 
   let grid = createGrid(size, size);
