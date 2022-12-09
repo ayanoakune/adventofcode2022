@@ -55,12 +55,10 @@ function hehe(folder, find, minSpace) {
   if (find) {
     // @ts-ignore
     if (folderTotal > minSpace && folderTotal < answer) {
-      console.log("better");
       answer = folderTotal;
     }
     // @ts-ignore
     if (folderTotal > minSpace && null === answer) {
-      console.log("first");
       answer = folderTotal;
     }
   }
@@ -71,7 +69,6 @@ function hehe(folder, find, minSpace) {
 export function day7part2() {
   const lines = input.split(/\r?\n/);
 
-  let isCmd = null;
   // @ts-ignore
   let cmd = null;
   let dir = null;
@@ -89,8 +86,6 @@ export function day7part2() {
     if ("$" === l[0]) {
       // @ts-ignore
       const command = getCommand(l);
-      // @ts-ignore
-      isCmd = command[0];
       // @ts-ignore
       cmd = command[1];
       // @ts-ignore

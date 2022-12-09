@@ -60,7 +60,6 @@ function hehe(folder: object) {
 export function day7part1() {
   const lines = input.split(/\r?\n/);
 
-  let isCmd = null;
   // @ts-ignore
   let cmd = null;
   let dir = null;
@@ -77,8 +76,6 @@ export function day7part1() {
 
     if ("$" === l[0]) {
       const command = getCommand(l);
-      // @ts-ignore
-      isCmd = command[0];
       // @ts-ignore
       cmd = command[1];
       // @ts-ignore
